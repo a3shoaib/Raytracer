@@ -84,6 +84,4 @@ void loop() {
   updateKeys();
   begin_render();
 }
-
-
 } // namespace sdltemplate

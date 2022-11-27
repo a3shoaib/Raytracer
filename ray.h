@@ -1,5 +1,7 @@
-#include "vec3.h"
+#ifndef RAYH
+#define RAYH
 
+#include "vec3.h"
 
 // Vector is a point in space. The ray will be a linear line with an origin and direction that will be kept track of
 
@@ -15,3 +17,5 @@ public:
 
     vec3 A, B;
 };
+
+#endif
