@@ -3,20 +3,19 @@
 
 #include "ray.h"
 
-class material;
+class Material;
 
-// Keeping track if sphere has been hit or not
-struct hit_record {
+// HitRecord keeps track if sphere has been hit
+struct HitRecord {
     float t;
-    vec3 p;
-    vec3 normal;
-    material *mat_ptr;
-
+    Vec3D p;
+    Vec3D normal;
+    Material *material_ptr;
 };
 
-class hittable {
+class Hittable {
 public: 
-    virtual bool hit (const ray& r, float t_min, float t_max, hit_record& rec) const = 0;
+    virtual bool hit (const Ray& r, float t_min, float t_max, HitRecord& rec) const = 0;
 };
 
 #endif

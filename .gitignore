@@ -1,6 +1,10 @@
 .vscode/
 *.o
+*.d
 *.ppm
 main
 .DS_Store
-
+one/
+two/
+three/
+four/

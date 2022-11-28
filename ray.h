@@ -7,15 +7,15 @@
 
 // To find a point on the line, we will use p(t) = A + t*B, where t is the given spot we want to look for,
 // A is the origin, and B is the direction
-class ray {
+class Ray {
 public:
-    ray(){}
-    ray(const vec3& a, const vec3& b) {A=a; B=b;}
-    vec3 origin() const {return A;}
-    vec3 direction() const {return B;}
-    vec3 point_at_parameter(float t) const {return A + t*B;}
+    Ray(){}
+    Ray(const Vec3D& a, const Vec3D& b);
+    Vec3D origin() const;
+    Vec3D direction() const;
+    Vec3D point_at_parameter(float t) const;
 
-    vec3 A, B;
+    Vec3D A, B;
 };
 
 #endif

@@ -1,16 +1,15 @@
 CXX = g++
 
-CXXFLAGS = --std=c++17 -F /Library/Frameworks
+EXEC = main
+CXXFLAGS = -g --std=c++17 -F /Library/Frameworks -MMD
 LDFLAGS = -framework SDL2 -F /Library/Frameworks -I /Library/Frameworks/SDL2.framework/Headers
+OBJECTS = main.o hittable_list.o camera.o material.o sphere.o ray.o vec3.o
+DEPENDS = ${OBJECTS:.o=.d}
 
-all: main
+${EXEC}: ${OBJECTS}
+	${CXX} ${CXXFLAGS} ${OBJECTS} ${LDFLAGS} -o ${EXEC}
 
-main: main.o
-	$(CXX) main.o -o main $(LDFLAGS)
-
-obj/main.o : main.cpp
-	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
+-include {DEPENDS}
 
 clean:
-	rm main.o main
-	
+	rm ${OBJECTS} ${EXEC} ${DEPENDS}
