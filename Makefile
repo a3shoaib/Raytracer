@@ -1,6 +1,6 @@
 CXX = g++
 
-CXXFLAGS = --std=c++17 -Wall -F /Library/Frameworks
+CXXFLAGS = --std=c++17 -F /Library/Frameworks
 LDFLAGS = -framework SDL2 -F /Library/Frameworks -I /Library/Frameworks/SDL2.framework/Headers
 
 all: main
